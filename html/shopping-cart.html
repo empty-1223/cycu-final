@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪漫販售所</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            background-color: #F5F5F5;
+        }
+
+        header {
+            background-color: #ffebf4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 5px;
+        }
+
+        .nav-bar {  /*選單主體*/
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffebf4;
+        }
+
+        .nav-item{  
+            position: relative;
+        }
+
+        .nav-item a { /*選單細項*/
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .nav-item a:hover{
+            background-color: #c06a9b;
+            color: white;
+        }
+
+        .nav-item:hover .sub-menu { 
+            display: block;
+        }
+
+        .sub-menu{  /*子選單*/
+            display: none;
+            position: absolute;
+            top: 100%;
+            text-decoration: none;
+            background-color: #ffffff;
+            left: 0;
+            width: 160px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.478);
+        }
+
+        .sub-menu a{
+            display: block; 
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .recommend, .cart {  /*推薦 購物車*/
+            width: 45%;
+            border-radius: 8px;  /*圓角*/
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 500px;
+            border: 3px solid black;  /*邊框*/
+            margin-top: 20px;
+        }
+
+        .recommend h2, .cart h2 {  /*推薦 購物車標題*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .scrollable-content { /*推薦內部滑動*/
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .scrollable-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: #cdcdcd;
+            border-radius: 4px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: #ababab;
+        }
+
+        .product-item, .cart-item { /*推薦 購物車細項*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid black;
+        }
+
+        .product-item img, .cart-item img {  /*推薦 購物車 圖片*/
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.442);
+        }
+
+        .product-item .product-name, .cart-item .product-name {
+            flex: 1;
+            margin-left: 15px;
+        }
+
+        button{  /*+-按鈕*/
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #eed3e2;
+        }
+
+        button:hover{
+            background-color: #ffebf4;    
+        }
+
+        .price {
+            font-weight: bold;
+            color: black;
+            margin-right: 10px;
+        }
+
+        .total{  /*合計*/
+            text-align: end;
+            margin-top: 130px;
+            font-weight: bold;
+        }
+
+        .checkout {  /*付款 取貨方式*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 180px;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            border: 3px solid black;
+
+        }
+
+        .checkout-out{
+            margin-left: 50px;
+            display: flex;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .checkout h3{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 0px;
+        }
+
+        .checkout-section {
+            width: 48%;
+        }
+
+        .checkout-section label {
+            font-size:18px;
+        }
+
+        .radio{  /*單選*/
+            appearance: none;
+            border: 1px solid #c06a9b;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .radio:checked{
+            background-color: #dd8dad;
+        }
+
+        .radio:hover{
+            border-color: #7d2e3e;
+        }
+
+        .endbutton{  /*送出按鈕*/
+            display: block;
+            margin-top: 20px;
+            width: 120px;
+            height: 35px;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #eed3e2;
+            font-weight: bold;
+        }
+
+        .endbutton:hover{
+            background-color: #ffebf4;
+        }
+        
+        footer {
+            position: static;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffebf4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .footer-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
+</header>
+
+<div class="nav-bar">
+    <div class="nav-item">
+        <a href="">鮮花</a>
+        <div class="sub-menu">
+            <a href="../html/flower/rose.html">戀戀玫瑰</a>
+            <a href="../html/flower/carnation.html">柔情似水</a>
+            <a href="../html/flower/chrysanthemum.html">菊豔風華</a>
+            <a href="../html/flower/lily.html">天使的祝福</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">盆景</a>
+        <div class="sub-menu">
+            <a href="../html/bonsai/cactus.html">金玉滿堂</a>
+            <a href="../html/bonsai/bamboo.html">翠竹盈門</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">生活小物</a>
+        <div class="sub-menu">
+            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花海旋律</a>
+            <a href="../html/lifestyle-accessory/scented-candle.html">晨露輕語</a>
+            <a href="../html/lifestyle-accessory/teddy-bear.html">愛之守護</a>
+            <a href="../html/lifestyle-accessory/natural-handmade-soap.html">香氛夢境</a>
+            <a href="../html/lifestyle-accessory/dried-flower.html">永恆花語</a>
+            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花韻瓶</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">花材包</a>
+        <div class="sub-menu">
+            <a href="../html/diy-flower-material-kit/christmas-themed-flower-kit.html">慶聖誕歡樂盒</a>
+            <a href="../html/diy-flower-material-kit/valentine's-day-themed-flower-kit.html">情意綿綿告白盒</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">課程體驗</a>
+        <div class="sub-menu">
+            <a href="../html/floral-arrangement-course/dried-flower-making.html">乾燥花</a>
+            <a href="../html/floral-arrangement-course/natural-scented-candle.html">香氛蠟燭</a>
+            <a href="../html/floral-arrangement-course/soap-flower-handmade-soap.html">手工香皂</a>
+            <a href="../html/floral-arrangement-course/flower-arrangement-art.html">插花藝術</a>
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <div class="recommend">     <!--推薦商品-->
+        <h2>推薦商品</h2>
+        <div class="scrollable-content">
+            <div class="product-item">
+                <img src="../image/flower/lily.png">
+                <span class="product-name">天使的祝福</span>
+                <span class="price">$2900</span>
+                <button>+</button>
+            </div>
+            <div class="product-item">
+                <img src="../image/lifestyle-accessory/dried-flower.png">
+                <span class="product-name">永恆花語</span>
+                <span class="price">$1890</span>
+                <button>+</button>
+            </div>
+            <div class="product-item">
+                <img src="../image/lifestyle-accessory/natural-handmade-soap.png">
+                <span class="product-name">香氛夢境</span>
+                <span class="price">$690</span>
+                <button>+</button>
+            </div>
+            <div class="product-item">
+                <img src="../image/diy-flower-material-kit/valentine's-day-themed-flower-kit.png">
+                <span class="product-name">情意綿綿告⽩盒</span>
+                <span class="price">$1800</span>
+                <button>+</button>
+            </div>
+            <div class="product-item">
+                <img src="../image/lifestyle-accessory/scented-candle.png">
+                <span class="product-name">晨露輕語</span>
+                <span class="price">$590</span>
+                <button>+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart">      <!--購物車-->
+        <h2>購物車</h2>
+        <div class="cart-item">
+            <img src="../image/flower/carnation.png">
+            <span class="product-name">柔情似⽔</span>
+            <span class="price">$1200</span>
+            <button>-</button>
+        </div>
+
+        <div class="cart-item">
+            <img src="../image/lifestyle-accessory/floral-scented-candle.png">
+            <span class="product-name">花海旋律</span>
+            <span class="price">$790</span>
+            <button>-</button>
+        </div>
+
+        <div class="cart-item">
+            <img src="../image/lifestyle-accessory/flower-arragement-tools-for-vases.png">
+            <span class="product-name">花韻瓶</span>
+            <span class="price">$890</span>
+            <button>-</button>
+        </div>
+        <div class="total">合計 $2880</div>
+    </div>
+</div>
+
+<div class="checkout">
+    <div class="checkout-out">
+        <div class="checkout-section">
+            <h3>付款方式</h3>
+            <label>
+            <input type="radio" name="pay" class="radio"/> 匯款
+            </label>
+            <label>
+                <input type="radio" name="pay" class="radio"/> 信用卡
+            </label>    
+            <label>
+            <input type="radio" name="pay" class="radio"/> 貨到付款
+            </label>
+        </div>
+
+        <div class="checkout-section">
+            <h3>取貨方式</h3>
+            <label>
+            <input type="radio" name="pick" class="radio"/> 來店取貨
+            </label>
+            <label>
+            <input type="radio" name="pick" class="radio"/> 宅配到家
+            </label>
+            <label>
+            <input type="radio" name="pick" class="radio"/> 超商取貨
+            </label>
+        </div>        
+    </div>
+
+    <button class="endbutton">送出</button>
+
+</div>
+
+<footer>
+    <h2>浪漫販售所</h2>
+
+    <div class="footer-nav">
+        <a href="#">關於我們</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
+            聯絡我們
+        </a>
+        <a href="#">常見問題</a>
+        <a href="#">付款&配送</a>
+        <a href="#">花卉養護</a>
+    </div>
+
+</footer>
+
+</body>
+</html>

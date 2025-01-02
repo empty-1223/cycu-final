@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪漫販售所</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            background-color: #F5F5F5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #ffebf4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 5px;
+        }
+
+        .nav-bar {  /*選單主體*/
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffebf4;
+        }
+
+        .nav-item{  
+            position: relative;
+        }
+
+        .nav-item a { /*選單細項*/
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .nav-item a:hover{
+            background-color: #c06a9b;
+            color: white;
+        }
+
+        .nav-item:hover .sub-menu { 
+            display: block;
+        }
+
+        .sub-menu{  /*子選單*/
+            display: none;
+            position: absolute;
+            top: 100%;
+            text-decoration: none;
+            background-color: #ffffff;
+            left: 0;
+            width: 160px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.478);
+        }
+
+        .sub-menu a{
+            display: block; 
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1200px;
+            flex-grow: 1;
+        }
+
+        .auth-box {  /*註冊與登入區域*/
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .auth-form {  /*註冊/登入表單區塊*/
+            width: 40%;
+            border-radius: 8px;  /*圓角*/
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: auto;
+            border: 3px solid black;  /*邊框*/
+            margin-bottom: 40px; /* 設置底部間距 */
+        }
+
+        .auth-form h2 {  /*表單標題*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .auth-form label {  /*表單欄位標題*/
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .auth-form input {  /*表單輸入框*/
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .auth-form button {  /*提交按鈕*/
+            width: 100%;
+            padding: 12px;
+            background-color: #ffebf4;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .auth-form button:hover {  /*提交按鈕 hover效果*/
+            background-color: #c06a9b;
+        }
+
+        footer {
+            background-color: #ffebf4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px; /* 確保footer不會黏在表單上 */
+        }
+
+        footer .footer-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
+</header>
+
+<!-- <div class="nav-bar">
+    <div class="nav-item">
+        <a href="#">鮮花</a>
+        <div class="sub-menu">
+            <a href="#">戀戀玫瑰</a>
+            <a href="#">柔情似⽔</a>
+            <a href="#">菊艷風華</a>
+            <a href="#">天使的祝福</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="#">盆景</a>
+        <div class="sub-menu">
+            <a href="#">⾦⽟滿堂</a>
+            <a href="#">翠⽵盈⾨</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="#">生活小物</a>
+        <div class="sub-menu">
+            <a href="#">花海旋律</a>
+            <a href="#">晨露輕語香</a>
+            <a href="#">愛之守護</a>
+            <a href="#">香氛夢境</a>
+            <a href="#">永恆花語</a>
+            <a href="#">花韻瓶</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="#">花材包</a>
+        <div class="sub-menu">
+            <a href="#">慶聖誕歡樂盒</a>
+            <a href="#">情意綿綿告⽩盒</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="#">課程體驗</a>
+        <div class="sub-menu">
+            <a href="#">乾燥花</a>
+            <a href="#">香氛蠟燭</a>
+            <a href="#">手工香皂</a>
+            <a href="#">插花藝術</a>
+        </div>
+    </div>
+</div> -->
+
+<div class="main">
+    <div class="auth-box">
+        <div class="auth-form">
+            <h2>註冊</h2>
+            <label for="username">使用者名稱</label>
+            <input type="text" id="username" placeholder="輸入使用者名稱">
+            
+            <label for="email">電子郵件</label>
+            <input type="email" id="email" placeholder="輸入電子郵件">
+            
+            <label for="password">密碼</label>
+            <input type="password" id="password" placeholder="輸入密碼">
+            
+            <button>註冊</button>
+        </div>
+
+        <div class="auth-form">
+            <h2>登入</h2>
+            <label for="login-email">電子郵件</label>
+            <input type="email" id="login-email" placeholder="輸入電子郵件">
+            
+            <label for="login-password">密碼</label>
+            <input type="password" id="login-password" placeholder="輸入密碼">
+            
+            <a href="profile.html"><button>登入</button></a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h2>浪漫販售所</h2>
+
+    <div class="footer-nav">
+        <a href="#">關於我們</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
+            聯絡我們
+        </a>
+        <a href="#">常見問題</a>
+        <a href="#">付款&配送</a>
+        <a href="#">花卉養護</a>
+    </div>
+
+</footer>
+
+</body>
+</html>

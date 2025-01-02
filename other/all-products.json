@@ -1,0 +1,24 @@
+[
+    { "name": "戀戀玫瑰", "price": "2,700", "image": "image/flower/rose.png", "page": "html/flower/rose.html" },
+    { "name": "柔情似水", "price": "1,200", "image": "image/flower/carnation.png", "page": "html/flower/carnation.html" },
+    { "name": "菊豔風華", "price": "1,200", "image": "image/flower/chrysanthemum.png", "page": "html/flower/chrysanthemum.html" },
+    { "name": "天使的祝福", "price": "2,900", "image": "image/flower/lily.png", "page": "html/flower/lily.html" },
+
+    { "name": "金玉滿堂", "price": "750", "image": "image/bonsai/cactus.png", "page": "html/bonsai/cactus.html" },
+    { "name": "翠竹盈門", "price": "2,000", "image": "image/bonsai/bamboo.png", "page": "html/bonsai/bamboo.html" },
+
+    { "name": "花海旋律", "price": "790", "image": "image/lifestyle-accessory/floral-scented-candle.png", "page": "html/lifestyle-accessory/floral-scented-candle.html" },
+    { "name": "晨露輕語", "price": "590", "image": "image/lifestyle-accessory/scented-candle.png", "page": "html/lifestyle-accessory/scented-candle.html" },
+    { "name": "愛之守護", "price": "590", "image": "image/lifestyle-accessory/teddy-bear.png", "page": "html/lifestyle-accessory/teddy-bear.html" },
+    { "name": "香氛夢境", "price": "690", "image": "image/lifestyle-accessory/natural-handmade-soap.png", "page": "html/lifestyle-accessory/natural-handmade-soap.html" },
+    { "name": "永恆花語", "price": "1,890", "image": "image/lifestyle-accessory/dried-flower.png", "page": "html/lifestyle-accessory/dried-flower.html" },
+    { "name": "花韻瓶", "price": "890", "image": "image/lifestyle-accessory/flower-arragement-tools-for-vases.png", "lifestyle-accessory": "flower/flower-arragement-tools-for-vases.html" },
+
+    { "name": "慶聖誕歡樂盒", "price": "980", "image": "image/diy-flower-material-kit/christmas-themed-flower-kit.png", "page": "html/diy-flower-material-kit/christmas-themed-flower-kit.html" },
+    { "name": "情意綿綿告白盒", "price": "1,800", "image": "image/diy-flower-material-kit/valentine's-day-themed-flower-kit.png", "page": "html/diy-flower-material-kit/valentine's-day-themed-flower-kit.html" },
+    
+    { "name": "乾燥花製作體驗課程", "price": "2,700", "image": "image/floral-arrangement-course/dried-flower-making.png", "page": "html/floral-arrangement-course/dried-flower-making.html" },
+    { "name": "香氛蠟燭製作體驗課程", "price": "2,580", "image": "image/floral-arrangement-course/natural-scented-candle.png", "page": "html/floral-arrangement-course/natural-scented-candle.html" },
+    { "name": "手工香皂花製作體驗課程", "price": "2,500", "image": "image/floral-arrangement-course/soap-flower-handmade-soap.png", "page": "html/floral-arrangement-course/soap-flower-handmade-soap.html" },
+    { "name": "插花藝術體驗課程", "price": "3,000", "image": "image/floral-arrangement-course/flower-arrangement-art.png", "page": "html/flofloral-arrangement-coursewer/flower-arrangement-art.html" }
+]

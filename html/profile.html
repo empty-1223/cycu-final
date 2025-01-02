@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員資料</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #F5F5F5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #ffebf4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffebf4;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .nav-item a:hover {
+            background-color: #c06a9b;
+            color: white;
+        }
+
+        .nav-item:hover .sub-menu {
+            display: block;
+        }
+
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            text-decoration: none;
+            background-color: #ffffff;
+            left: 0;
+            width: 160px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.478);
+        }
+
+        .sub-menu a {
+            display: block;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1200px;
+            flex-grow: 1;
+        }
+
+        .profile-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .profile-section p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .record-list {
+            margin-top: 20px;
+        }
+
+        .record-item {
+            background-color: #fafafa;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .record-item p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #ffebf4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        footer .footer-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
+</header>
+
+<div class="nav-bar">
+    <div class="nav-item">
+        <a href="">鮮花</a>
+        <div class="sub-menu">
+            <a href="../html/flower/rose.html">戀戀玫瑰</a>
+            <a href="../html/flower/carnation.html">柔情似水</a>
+            <a href="../html/flower/chrysanthemum.html">菊豔風華</a>
+            <a href="../html/flower/lily.html">天使的祝福</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">盆景</a>
+        <div class="sub-menu">
+            <a href="../html/bonsai/cactus.html">金玉滿堂</a>
+            <a href="../html/bonsai/bamboo.html">翠竹盈門</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">生活小物</a>
+        <div class="sub-menu">
+            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花海旋律</a>
+            <a href="../html/lifestyle-accessory/scented-candle.html">晨露輕語</a>
+            <a href="../html/lifestyle-accessory/teddy-bear.html">愛之守護</a>
+            <a href="../html/lifestyle-accessory/natural-handmade-soap.html">香氛夢境</a>
+            <a href="../html/lifestyle-accessory/dried-flower.html">永恆花語</a>
+            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花韻瓶</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">花材包</a>
+        <div class="sub-menu">
+            <a href="../html/diy-flower-material-kit/christmas-themed-flower-kit.html">慶聖誕歡樂盒</a>
+            <a href="../html/diy-flower-material-kit/valentine's-day-themed-flower-kit.html">情意綿綿告白盒</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">課程體驗</a>
+        <div class="sub-menu">
+            <a href="../html/floral-arrangement-course/dried-flower-making.html">乾燥花</a>
+            <a href="../html/floral-arrangement-course/natural-scented-candle.html">香氛蠟燭</a>
+            <a href="../html/floral-arrangement-course/soap-flower-handmade-soap.html">手工香皂</a>
+            <a href="../html/floral-arrangement-course/flower-arrangement-art.html">插花藝術</a>
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <div class="profile-container">
+        <!-- 個人基本資料 -->
+        <div class="profile-section">
+            <h2>個人基本資料</h2>
+            <p><strong>姓名：</strong> OOO</p>
+            <p><strong>使用者名稱：</strong> cycu250101</p>
+            <p><strong>電子郵件：</strong> 11010010@cycu.edu.tw</p>
+            <p><strong>註冊日期：</strong> 2023-05-15</p>
+        </div>
+
+        <!-- 歷史消費紀錄 -->
+        <div class="profile-section">
+            <h2>歷史消費紀錄</h2>
+            <div class="record-list">
+                <div class="record-item">
+                    <p><strong>訂單編號：</strong> #1001</p>
+                    <p><strong>日期：</strong> 2023-11-10</p>
+                    <p><strong>金額：</strong> NT$ 1900</p>
+                    <p><strong>商品：</strong> 戀戀玫瑰</p>
+                </div>
+                <div class="record-item">
+                    <p><strong>訂單編號：</strong> #1002</p>
+                    <p><strong>日期：</strong> 2023-12-05</p>
+                    <p><strong>金額：</strong> NT$ 750</p>
+                    <p><strong>商品：</strong> 金玉滿堂</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 評論與評分紀錄 -->
+        <div class="profile-section">
+            <h2>評論與評分紀錄</h2>
+            <div class="record-list">
+                <div class="record-item">
+                    <p><strong>商品：</strong> 戀戀玫瑰</p>
+                    <p><strong>評分：</strong> ★★★★☆</p>
+                    <p><strong>評論：</strong> 很漂亮，送給女友她超開心！</p>
+                </div>
+                <div class="record-item">
+                    <p><strong>商品：</strong> 金玉滿堂</p>
+                    <p><strong>評分：</strong> ★★★☆☆</p>
+                    <p><strong>評論：</strong> 整體不錯，但有點小，還是很喜歡。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h2>浪漫販售所</h2>
+
+    <div class="footer-nav">
+        <a href="#">關於我們</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
+            聯絡我們
+        </a>
+        <a href="#">常見問題</a>
+        <a href="#">付款&配送</a>
+        <a href="#">花卉養護</a>
+    </div>
+</footer>
+
+</body>
+</html>

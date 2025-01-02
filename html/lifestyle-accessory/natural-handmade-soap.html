@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪漫販售所</title>
+    <style>
+        /* 全局樣式 */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 頂部導航欄 */
+        .header {
+            background-color: #ffebf4;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            white-space: nowrap; /* 防止文字換行 */
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .header nav .menu {
+            position: relative;
+            margin: 0 80px;
+        }
+
+        .header nav .menu > a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header nav .menu > a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            text-decoration: none;
+            background: #fff;
+            left: 0;
+            width: 135px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.478);
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .menu:hover .dropdown {
+            display: block;
+        }
+
+        /* 主體區域 */
+        .main {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        /* 左側商品區 */
+        .product-section {
+            width: 45%;
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+.product-image {
+    width: 100%;
+    height: 600px;
+    overflow: hidden; /* 防止圖片超出區塊 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ccc; /* 預設背景色 */
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持圖片比例並填滿區塊 */
+    border-radius: 5px;
+}
+
+
+        .add-to-cart-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #388E3C;
+        }
+
+        .product-info {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .product-info h2 {
+            font-size: 24px;
+            margin: 5px 0;
+        }
+
+        .product-info p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .product-description {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .product-description h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-description ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* 右側評價區 */
+        .reviews {
+            width: 45%;
+        }
+
+        .reviews h3 {
+            margin-bottom: 10px;
+        }
+
+        .review-item {
+            background: #eee;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .review-item h4 {
+            margin: 0;
+        }
+
+        .stars {
+            color: orange;
+        }
+
+        /* 底部區域 */
+        .footer {
+            background-color: #ffebf4;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .footer nav a {
+            color: black;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導航欄 -->
+    <header class="header">
+        <a href="../../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
+        <nav>
+            <div class="menu">
+                <a href="#">鮮花</a>
+                <div class="dropdown">
+                    <a href="../flower/rose.html">戀戀玫瑰</a>
+                    <a href="../flower/carnation.html">柔情似水</a>
+                    <a href="../flower/chrysanthemum.html">菊豔風華</a>
+                    <a href="../flower/lily.html">天使的祝福</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">盆景</a>
+                <div class="dropdown">
+                    <a href="../bonsai/cactus.html">金玉滿堂</a>
+                    <a href="../bonsai/bamboo.html">翠竹盈門</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">生活小物</a>
+                <div class="dropdown">
+                    <a href="floral-scented-candle.html">花海旋律</a>
+                    <a href="scented-candle.html">晨露輕語</a>
+                    <a href="teddy-bear.html">愛之守護</a>
+                    <a href="natural-handmade-soap.html">香氛夢境</a>
+                    <a href="dried-flower.html">永恆花語</a>
+                    <a href="flower-arragement-tools-for-vases.html">花韻瓶</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">花材包</a>
+                <div class="dropdown">
+                    <a href="../diy-flower-material-kit/christmas-themed-flower-kit.html">慶聖誕歡樂盒</a>
+                    <a href="../diy-flower-material-kit/valentine's-day-themed-flower-kit.html">情意綿綿告白盒</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">課程體驗</a>
+                <div class="dropdown">
+                    <a href="../floral-arrangement-course/dried-flower-making.html">乾燥花</a>
+                    <a href="../floral-arrangement-course/natural-scented-candle.html">香氛蠟燭</a>
+                    <a href="../floral-arrangement-course/soap-flower-handmade-soap.html">手工香皂花</a>
+                    <a href="../floral-arrangement-course/flower-arrangement-art.html">插花藝術</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主體內容 -->
+    <main class="main">
+        <!-- 左側商品資訊 -->
+        <section class="product-section">
+            <div class="product-image">
+                <img src="../../image/lifestyle-accessory/natural-handmade-soap.png" alt="商品圖片" class="product-img">
+            </div>
+            <button class="add-to-cart-btn">加入購物車</button>
+            <div class="product-info">
+                <h2>香氛夢境</h2>
+                <p>$690(兩塊加鐵盒)</p>
+            </div>
+            <div class="product-description">
+                <h3>商品介紹</h3>
+                <p>沉浸在自然的芬芳中，香氛夢境手工香皂將為您的肌膚帶來無與倫比的呵護與享受。每一塊香皂均由天然成分精心製作，融合了多種植物精油，讓您在清潔的同時，感受到如夢似幻的香氣，彷彿置身於花海之中。
+                </p>
+                <h3>商品特點</h3>
+                <p>天然成分：選用優質植物油與天然香料，不含有害化學物質，適合各種膚質使用。</p>
+                <p>柔和泡沫：輕柔的泡沫能有效清潔肌膚，同時保持肌膚的水分與柔軟。 </p>
+                <p>獨特香氣：每塊香皂散發著自然清新的香氣，讓您在洗澡時享受愉悅的感官體驗。</p>
+                <h3>適合場合</h3>
+                <p>日常護理：適合每天使用，讓您的肌膚在清潔中得到滋潤。</p>
+                <p>送禮佳品：作為生日、節慶或感謝的禮物，傳遞您的心意與祝福。</p>
+                <p>居家裝飾：擺放於浴室或洗手台上，增添一份自然的美感。 </p>
+                <P>選擇香氛夢境手工香皂，讓每一次洗澡都成為一段美好的夢境旅程，為您的肌膚帶來自然的呵護與愉悅！</P>
+            </div>
+        </section>
+
+        <!-- 右側商品評價 -->
+        <section class="reviews">
+            <h3>商品評價</h3>
+            <div class="review-item">
+                <h4>陳O妤</h4>
+                <div class="stars">★★★★★</div>
+                <p>香皂竟然能做得如此精緻漂亮</p>
+            </div>
+            <div class="review-item">
+                <h4>郭O安</h4>
+                <div class="stars">★★★★★</div>
+                <p>香味獨特且好聞</p>
+            </div>
+            <div class="review-item">
+                <h4>陳O婕</h4>
+                <div class="stars">★★★★★</div>
+                <p>很滋潤</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部區域 -->
+    <footer class="footer">
+        <h2>浪漫販售所</h2>
+        <nav>
+            <a href="#">關於我們</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
+                聯絡我們
+            </a>
+            <a href="#">常見問題</a>
+            <a href="#">付款＆配送</a>
+            <a href="#">花卉養護</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
