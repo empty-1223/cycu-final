@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪漫販售所</title>
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            background-color: #F5F5F5;
+        }
+
+        /* 頂部導航欄 */
+        header {
+            background: linear-gradient(to right, #ffebf4, #d9e9ff);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 5px;
+        }
+
+        .nav-bar {  /*選單主體*/
+            display: flex;
+            justify-content: space-around;
+            background-color: #efebff;
+        }
+
+        .nav-item{  
+            position: relative;
+        }
+
+        .nav-item a { /*選單細項*/
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .nav-item a:hover{
+            background-color: #c06a9b;
+            color: white;
+        }
+
+        .nav-item:hover .sub-menu { 
+            display: block;
+        }
+
+        .sub-menu{  /*子選單*/
+            display: none;
+            position: absolute;
+            top: 100%;
+            text-decoration: none;
+            background-color: #ffffff;
+            left: 0;
+            width: 160px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.478);
+        }
+
+        .sub-menu a{
+            display: block; 
+        }
+
+
+        /* 主體區域 */
+        .main {
+            display: block;
+            justify-self: center;
+            margin: 20px;
+        }
+
+        .main h1 {
+            font-weight: 400;
+        }
+
+        .main h2 {
+            font-weight: 400;
+        }
+
+        .main h3 {
+            font-weight: 400;
+        }
+
+        /* 底部區域 */
+        .footer {
+            background-color: #ebf4ff;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .footer nav a {
+            color: black;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導航欄 -->
+    
+<header>
+    <a href="../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
+</header>
+
+<div class="nav-bar">
+    <div class="nav-item">
+        <a href="">鮮花</a>
+        <div class="sub-menu">
+            <a href="../html/flower/rose.html">戀戀玫瑰</a>
+            <a href="../html/flower/carnation.html">柔情似水</a>
+            <a href="../html/flower/chrysanthemum.html">菊豔風華</a>
+            <a href="../html/flower/lily.html">天使的祝福</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">盆景</a>
+        <div class="sub-menu">
+            <a href="../html/bonsai/cactus.html">金玉滿堂</a>
+            <a href="../html/bonsai/bamboo.html">翠竹盈門</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">生活小物</a>
+        <div class="sub-menu">
+            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花海旋律</a>
+            <a href="../html/lifestyle-accessory/scented-candle.html">晨露輕語</a>
+            <a href="../html/lifestyle-accessory/teddy-bear.html">愛之守護</a>
+            <a href="../html/lifestyle-accessory/natural-handmade-soap.html">香氛夢境</a>
+            <a href="../html/lifestyle-accessory/dried-flower.html">永恆花語</a>
+            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花韻瓶</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">花材包</a>
+        <div class="sub-menu">
+            <a href="../html/diy-flower-material-kit/christmas-themed-flower-kit.html">慶聖誕歡樂盒</a>
+            <a href="../html/diy-flower-material-kit/valentine's-day-themed-flower-kit.html">情意綿綿告白盒</a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="">課程體驗</a>
+        <div class="sub-menu">
+            <a href="../html/floral-arrangement-course/dried-flower-making.html">乾燥花</a>
+            <a href="../html/floral-arrangement-course/natural-scented-candle.html">香氛蠟燭</a>
+            <a href="../html/floral-arrangement-course/soap-flower-handmade-soap.html">手工香皂</a>
+            <a href="../html/floral-arrangement-course/flower-arrangement-art.html">插花藝術</a>
+        </div>
+    </div>
+</div>
+
+    <!-- 主體內容 -->
+    <main class="main">
+        <h1>
+            配送資訊<br>
+        </h1>
+        <h3>
+            我們致力於提供快速、可靠的配送服務，讓每一份美麗的花束準時送達。<br><br>
+            配送範圍：目前提供台灣本島及離島地區的配送服務，其他地區請提前洽詢客服確認。<br>
+        </h3>
+        <h2>
+            可配送時段（不含國定假日）：<br>
+        </h2>
+        <h3>
+            平日：上午9:00至下午6:00<br><br>
+            假日：上午10:00至下午5:00<br>
+        </h3>
+        <h2>
+            配送費用：<br>
+        </h2>
+        <h3>
+            同城配送：NT$100起，依距離計算。<br><br>
+            訂單滿NT$2,500免運費。<br><br>
+            指定時段配送：可加收NT$200選擇特定時段配送，並請於下單時備註。<br><br>
+            若遇天候或交通等不可抗力因素造成配送延誤，我們將第一時間與您聯繫並協助處理。<br><br>
+        </h3>
+        <hr>
+        <h1>
+            付款方式<br>
+        </h1>
+        <h2>
+            我們提供多種便捷的付款方式，確保您的交易安全：<br>
+        </h2>
+        <h3>
+            1. 線上信用卡付款：支援Visa、MasterCard、JCB。<br><br>
+            2. 行動支付：Apple Pay、Google Pay、LINE Pay等。<br><br>
+            3. 銀行轉帳：完成轉帳後，請將轉帳收據截圖上傳至客服確認。<br><br>
+            4. 貨到付款（僅限同城配送）：需加收手續費NT$30。<br>
+        </h3>
+        <h2>
+            發票資訊：如需開立統一發票，請於結帳時提供發票抬頭及統編。<br>
+        </h2>
+        <hr>
+        <h1>
+            注意事項：<br>
+        </h1>
+        <h3>
+            訂單需於配送日前一天中午12:00前完成付款，逾期未付款者，訂單將自動取消。<br><br>
+            本店不接受急單，鮮花類商品請提前五天訂購，以確保商品準時送達。<br><br>
+            如有其他需求或疑問，歡迎隨時聯繫我們的客服團隊，我們將竭誠為您服務！
+        </h3>
+    </main>
+
+    <!-- 底部區域 -->
+    <footer class="footer">
+        <h2>浪漫販售所</h2>
+        <nav>
+            <a href="">關於我們</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
+                聯絡我們
+            </a>
+            <a href="">常見問題</a>
+            <a href="deliver.html">付款＆配送</a>
+            <a href="flower-maintainment.html">花卉養護</a>
+        </nav>
+    </footer>
+
+</body>
+</html>

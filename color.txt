@@ -1,0 +1,11 @@
+header {
+    background: linear-gradient(to right, #ffebf4, #d9e9ff);
+}
+
+.nav-bar {
+    background-color: #efebff;
+}
+
+footer {
+    background-color: #ebf4ff;
+}
