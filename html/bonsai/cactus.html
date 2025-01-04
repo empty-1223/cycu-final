@@ -179,8 +179,59 @@
             margin: 0;
         }
 
+        .review-form {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .review-form h3 {
+            margin-bottom: 10px;
+        }
+
         .stars {
             color: orange;
+        }
+
+        .star-rating {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .star-rating .star {
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .star-rating .star:hover,
+        .star-rating .star.selected {
+            color: orange;
+        }
+
+        #review-content {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        #submit-review {
+            padding: 8px 16px;
+            font-size: 14px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit-review:hover {
+            background-color: #388E3C;
         }
 
         /* 底部區域 */
@@ -302,6 +353,20 @@
                 <div class="stars">★★★★★</div>
                 <p>很好養</p>
             </div>
+
+            <!-- 使用者輸入評論 -->
+            <div class="review-form">
+                <h3>發表您的評論</h3>
+                <div class="star-rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <textarea id="review-content" placeholder="輸入您的評論..." rows="4"></textarea>
+                <button id="submit-review">發送</button>
+            </div>
         </section>
     </main>
 
@@ -318,6 +383,50 @@
             <a href="../flower-maintainment.html">花卉養護</a>
         </nav>
     </footer>
+
+    <script>
+        // 選取星等並高亮顯示
+        const stars = document.querySelectorAll('.star');
+        let selectedRating = 0;
+    
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = star.dataset.value;
+                stars.forEach(s => s.classList.remove('selected'));
+                for (let i = 0; i < selectedRating; i++) {
+                    stars[i].classList.add('selected');
+                }
+            });
+        });
+    
+        // 發送評論
+        document.getElementById('submit-review').addEventListener('click', () => {
+            const reviewContent = document.getElementById('review-content').value;
+    
+            if (selectedRating === 0 || reviewContent.trim() === '') {
+                alert('請選擇星等並填寫評論內容！');
+                return;
+            }
+    
+            // 新增評論到評論區
+            const reviewSection = document.querySelector('.reviews');
+            const newReview = document.createElement('div');
+            newReview.classList.add('review-item');
+            newReview.innerHTML = `
+                <h4>您</h4>
+                <div class="stars">${'★'.repeat(selectedRating)}${'☆'.repeat(5 - selectedRating)}</div>
+                <p>${reviewContent}</p>
+            `;
+            reviewSection.insertBefore(newReview, document.querySelector('.review-form'));
+    
+            // 清空輸入欄位
+            document.getElementById('review-content').value = '';
+            stars.forEach(s => s.classList.remove('selected'));
+            selectedRating = 0;
+    
+            alert('您的評論已成功發送！');
+        });
+    </script>
 
 </body>
 </html>
