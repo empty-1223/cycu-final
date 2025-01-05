@@ -145,6 +145,11 @@ li {
     width: 36px;
 }
 
+.content {
+    max-width: fit-content;
+    margin-inline: auto;
+}
+
 .dynamic-ads {
     overflow: hidden;
 

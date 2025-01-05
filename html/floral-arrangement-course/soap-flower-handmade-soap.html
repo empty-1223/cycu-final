@@ -75,44 +75,33 @@
 
         /* 主體區域 */
         .main {
-            display: flex;
-            justify-content: space-between;
             margin: 20px;
         }
 
         /* 左側商品區 */
         .product-section {
-            width: 45%;
+            width: 100%;
             text-align: center;
         }
 
         .product-image {
-            width: 100%;
-            height: 300px;
+            width: 40%;
+            height: auto;
+            overflow: hidden; /* 防止圖片超出區塊 */
             background: #ccc;
-            display: flex;
+            margin: 30px;
+            /* display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; */
             font-size: 20px;
         }
 
-.product-image {
-    width: 100%;
-    height: 600px;
-    overflow: hidden; /* 防止圖片超出區塊 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ccc; /* 預設背景色 */
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持圖片比例並填滿區塊 */
-    border-radius: 5px;
-}
-
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持圖片比例並填滿區塊 */
+            border-radius: 5px;
+        }
 
         .add-to-cart-btn {
             margin-top: 10px;
@@ -130,6 +119,7 @@
         }
 
         .product-info {
+            width: 45%;
             margin-top: 20px;
             text-align: left;
         }
@@ -145,6 +135,7 @@
         }
 
         .product-description {
+            width: 45%;
             margin-top: 20px;
             text-align: left;
         }
@@ -159,9 +150,60 @@
             margin-left: 20px;
         }
 
+        .product-quantity {
+            margin: 10px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-quantity label {
+            margin-right: 10px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .quantity-control button {
+            width: 30px;
+            height: 35px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-control button:hover {
+            background-color: #ddd;
+        }
+
+        .quantity-control input {
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            -moz-appearance: textfield; /* Firefox 移除上下箭頭 */
+        }
+
+        .quantity-control input::-webkit-outer-spin-button,
+        .quantity-control input::-webkit-inner-spin-button {
+            -webkit-appearance: none; /* Chrome, Safari 移除上下箭頭 */
+            margin: 0;
+        }
+
         /* 右側評價區 */
         .reviews {
-            width: 45%;
+            width: 100%;
         }
 
         .reviews h3 {
@@ -212,7 +254,7 @@
         }
 
         #review-content {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -310,31 +352,41 @@
     <main class="main">
         <!-- 左側商品資訊 -->
         <section class="product-section">
-            <div class="product-image">
-                <img src="../../image/floral-arrangement-course/soap-flower-handmade-soap.png" alt="商品圖片" class="product-img">
-            </div>
-            <button class="add-to-cart-btn">加入購物車</button>
-            <div class="product-info">
-                <h2>手工香皂花製作體驗課程(3hr)</h2>
-                <p>$2700</p>
-            </div>
-            <div class="product-description">
-                <h3>商品介紹</h3>
-                <p>手工香皂花製作體驗課程專為所有熱愛手作的人士設計，無論您是初學者還是有經驗的花藝愛好者，都能在這裡找到樂趣與靈感。透過專業的指導，您將學會如何選擇材料、調配香氛，並親手製作出獨一無二的香皂花，無論是自我提升還是分享愛與美，這都是一個完美的選擇，期待在課堂上見到您。 
-                </p>
-                <h3>課程內容</h3>
-                <p>基礎知識介紹：了解手工香皂的基本原理與材料特性，包括天然植物油和香氛精油的選擇。</p>
-                <p>實作教學：在專業老師的指導下，從頭到尾學習香皂花的製作過程，包括熔蠟、調香和成型等步驟。</p>
-                <p>創意發揮：鼓勵學員根據個人喜好設計獨特的香皂花，讓每一朵花都能傳遞您的情感與創意。</p>
-                <p>拍照留念：課程結束後，您可以拍攝美麗的成品，留下珍貴的回憶。</p>
-                <h3>適合對象：</h3>
-                <p>所有年齡層：無論您是學生、上班族還是退休人士，都可以參加我們的課程。 </p>
-                <p>家庭聚會：在家庭聚會中與親友一起動手製作，共享創作的快樂時光。</p>
-                <p>情侶或朋友：適合作為情侶約會或朋友聚會的活動，共同享受創作的樂趣。</p>
-                <P>企業團建：可作為企業團建活動，增進團隊合作與凝聚力。 </P>
-                <h3>課程時間與地點</h3>
-                <p>課程將在我們溫馨舒適的工作室內進行，提供良好的學習環境。</p>
-                <P> 課程時間可根據需求安排，請提前預約。</P>
+            <div style="display: flex;">
+                <div class="product-image">
+                    <img src="../../image/floral-arrangement-course/soap-flower-handmade-soap.png" alt="商品圖片" class="product-img">
+                </div>
+                <div class="product-description">
+                <div class="product-info">
+                    <h2>手工香皂花製作體驗課程(3hr)</h2>
+                    <p>$2700</p>
+                </div>
+                    <h3>商品介紹</h3>
+                    <p>手工香皂花製作體驗課程專為所有熱愛手作的人士設計，無論您是初學者還是有經驗的花藝愛好者，都能在這裡找到樂趣與靈感。透過專業的指導，您將學會如何選擇材料、調配香氛，並親手製作出獨一無二的香皂花，無論是自我提升還是分享愛與美，這都是一個完美的選擇，期待在課堂上見到您。 
+                    </p>
+                    <h3>課程內容</h3>
+                    <p>基礎知識介紹：了解手工香皂的基本原理與材料特性，包括天然植物油和香氛精油的選擇。</p>
+                    <p>實作教學：在專業老師的指導下，從頭到尾學習香皂花的製作過程，包括熔蠟、調香和成型等步驟。</p>
+                    <p>創意發揮：鼓勵學員根據個人喜好設計獨特的香皂花，讓每一朵花都能傳遞您的情感與創意。</p>
+                    <p>拍照留念：課程結束後，您可以拍攝美麗的成品，留下珍貴的回憶。</p>
+                    <h3>適合對象：</h3>
+                    <p>所有年齡層：無論您是學生、上班族還是退休人士，都可以參加我們的課程。 </p>
+                    <p>家庭聚會：在家庭聚會中與親友一起動手製作，共享創作的快樂時光。</p>
+                    <p>情侶或朋友：適合作為情侶約會或朋友聚會的活動，共同享受創作的樂趣。</p>
+                    <P>企業團建：可作為企業團建活動，增進團隊合作與凝聚力。 </P>
+                    <h3>課程時間與地點</h3>
+                    <p>課程將在我們溫馨舒適的工作室內進行，提供良好的學習環境。</p>
+                    <P> 課程時間可根據需求安排，請提前預約。</P>
+                    <div class="product-quantity">
+                        <label for="quantity">數量：</label>
+                        <div class="quantity-control">
+                            <button id="decrease-btn">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="99">
+                            <button id="increase-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn" id="add-to-cart-btn">加入購物車</button>
+                </div>
             </div>
         </section>
 
@@ -428,6 +480,44 @@
             selectedRating = 0;
     
             alert('您的評論已成功發送！');
+        });
+
+        const quantityInput = document.getElementById('quantity');
+        const decreaseBtn = document.getElementById('decrease-btn');
+        const increaseBtn = document.getElementById('increase-btn');
+        const addToCartBtn = document.getElementById('add-to-cart-btn');
+
+        // 減少數量
+        decreaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value, 10);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        // 增加數量
+        increaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value, 10);
+            if (currentValue < 99) {
+                quantityInput.value = currentValue + 1;
+            }
+        });
+
+        // 防止用戶手動輸入無效數量
+        quantityInput.addEventListener('input', () => {
+            let value = parseInt(quantityInput.value, 10);
+            if (isNaN(value) || value < 1) {
+                quantityInput.value = 1;
+            } else if (value > 99) {
+                quantityInput.value = 99;
+            }
+        });
+
+        // 加入購物車邏輯
+        addToCartBtn.addEventListener('click', () => {
+            const quantity = parseInt(quantityInput.value, 10);
+            alert(`已將 ${quantity} 件商品加入購物車！`);
+            quantityInput.value = 1; // 重置數量
         });
     </script>
 

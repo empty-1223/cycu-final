@@ -75,44 +75,33 @@
 
         /* 主體區域 */
         .main {
-            display: flex;
-            justify-content: space-between;
             margin: 20px;
         }
 
         /* 左側商品區 */
         .product-section {
-            width: 45%;
+            width: 100%;
             text-align: center;
         }
 
         .product-image {
-            width: 100%;
-            height: 300px;
+            width: 40%;
+            height: auto;
+            overflow: hidden; /* 防止圖片超出區塊 */
             background: #ccc;
-            display: flex;
+            margin: 30px;
+            /* display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; */
             font-size: 20px;
         }
 
-.product-image {
-    width: 100%;
-    height: 600px;
-    overflow: hidden; /* 防止圖片超出區塊 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ccc; /* 預設背景色 */
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持圖片比例並填滿區塊 */
-    border-radius: 5px;
-}
-
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持圖片比例並填滿區塊 */
+            border-radius: 5px;
+        }
 
         .add-to-cart-btn {
             margin-top: 10px;
@@ -130,6 +119,7 @@
         }
 
         .product-info {
+            width: 45%;
             margin-top: 20px;
             text-align: left;
         }
@@ -145,6 +135,7 @@
         }
 
         .product-description {
+            width: 45%;
             margin-top: 20px;
             text-align: left;
         }
@@ -159,9 +150,60 @@
             margin-left: 20px;
         }
 
+        .product-quantity {
+            margin: 10px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-quantity label {
+            margin-right: 10px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .quantity-control button {
+            width: 30px;
+            height: 35px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-control button:hover {
+            background-color: #ddd;
+        }
+
+        .quantity-control input {
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            -moz-appearance: textfield; /* Firefox 移除上下箭頭 */
+        }
+
+        .quantity-control input::-webkit-outer-spin-button,
+        .quantity-control input::-webkit-inner-spin-button {
+            -webkit-appearance: none; /* Chrome, Safari 移除上下箭頭 */
+            margin: 0;
+        }
+
         /* 右側評價區 */
         .reviews {
-            width: 45%;
+            width: 100%;
         }
 
         .reviews h3 {
@@ -212,7 +254,7 @@
         }
 
         #review-content {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -310,27 +352,37 @@
     <main class="main">
         <!-- 左側商品資訊 -->
         <section class="product-section">
-            <div class="product-image">
-                <img src="../../image/lifestyle-accessory/flower-arragement-tools-for-vases.png" alt="商品圖片" class="product-img">
-            </div>
-            <button class="add-to-cart-btn">加入購物車</button>
-            <div class="product-info">
-                <h2>花韻瓶</h2>
-                <p>$890</p>
-            </div>
-            <div class="product-description">
-                <h3>商品介紹</h3>
-                <p>讓每一個角落都充滿自然的氣息，花韻瓶是您完美的花卉展示選擇。這款精美的花瓶設計靈感源自於自然界的花朵，無論是插入鮮花還是乾燥花，都能展現出獨特的藝術感與優雅氛圍。其流線型的外觀與細膩的工藝，讓它成為家居裝飾的亮點。 
-                </p>
-                <h3>商品特點</h3>
-                <p>高品質材質：採用耐用且美觀的材料製作，確保長時間使用不易損壞。 </p>
-                <p>多功能設計：適合各種花卉，無論是日常插花還是特殊場合的裝飾，都能完美搭配。</p>
-                <p>易於清潔：光滑的表面設計，方便清洗與保養，保持花瓶常新。</p>
-                <h3>適合場合</h3>
-                <p>家居裝飾：放置於客廳、餐桌或書房，增添自然氣息與藝術感。</p>
-                <p>送禮佳品：作為生日、節慶或開業祝賀的理想禮物，傳遞您的祝福與心意。 </p>
-                <p>居家裝飾：擺放於浴室或洗手台上，增添一份自然的美感。 </p>
-                <P>婚禮佈置：在婚禮上使用，為整體佈置增添浪漫氛圍。</P>
+            <div style="display: flex;">
+                <div class="product-image">
+                    <img src="../../image/lifestyle-accessory/flower-arragement-tools-for-vases.png" alt="商品圖片" class="product-img">
+                </div>
+                <div class="product-description">
+                    <div class="product-info">
+                        <h2>花韻瓶</h2>
+                        <p>$890</p>
+                    </div>
+                    <h3>商品介紹</h3>
+                    <p>讓每一個角落都充滿自然的氣息，花韻瓶是您完美的花卉展示選擇。這款精美的花瓶設計靈感源自於自然界的花朵，無論是插入鮮花還是乾燥花，都能展現出獨特的藝術感與優雅氛圍。其流線型的外觀與細膩的工藝，讓它成為家居裝飾的亮點。 
+                    </p>
+                    <h3>商品特點</h3>
+                    <p>高品質材質：採用耐用且美觀的材料製作，確保長時間使用不易損壞。 </p>
+                    <p>多功能設計：適合各種花卉，無論是日常插花還是特殊場合的裝飾，都能完美搭配。</p>
+                    <p>易於清潔：光滑的表面設計，方便清洗與保養，保持花瓶常新。</p>
+                    <h3>適合場合</h3>
+                    <p>家居裝飾：放置於客廳、餐桌或書房，增添自然氣息與藝術感。</p>
+                    <p>送禮佳品：作為生日、節慶或開業祝賀的理想禮物，傳遞您的祝福與心意。 </p>
+                    <p>居家裝飾：擺放於浴室或洗手台上，增添一份自然的美感。 </p>
+                    <P>婚禮佈置：在婚禮上使用，為整體佈置增添浪漫氛圍。</P>
+                    <div class="product-quantity">
+                        <label for="quantity">數量：</label>
+                        <div class="quantity-control">
+                            <button id="decrease-btn">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="99">
+                            <button id="increase-btn">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn" id="add-to-cart-btn">加入購物車</button>
+                </div>
             </div>
         </section>
 
@@ -422,6 +474,44 @@
             selectedRating = 0;
     
             alert('您的評論已成功發送！');
+        });
+
+        const quantityInput = document.getElementById('quantity');
+        const decreaseBtn = document.getElementById('decrease-btn');
+        const increaseBtn = document.getElementById('increase-btn');
+        const addToCartBtn = document.getElementById('add-to-cart-btn');
+
+        // 減少數量
+        decreaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value, 10);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        // 增加數量
+        increaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value, 10);
+            if (currentValue < 99) {
+                quantityInput.value = currentValue + 1;
+            }
+        });
+
+        // 防止用戶手動輸入無效數量
+        quantityInput.addEventListener('input', () => {
+            let value = parseInt(quantityInput.value, 10);
+            if (isNaN(value) || value < 1) {
+                quantityInput.value = 1;
+            } else if (value > 99) {
+                quantityInput.value = 99;
+            }
+        });
+
+        // 加入購物車邏輯
+        addToCartBtn.addEventListener('click', () => {
+            const quantity = parseInt(quantityInput.value, 10);
+            alert(`已將 ${quantity} 件商品加入購物車！`);
+            quantityInput.value = 1; // 重置數量
         });
     </script>
 

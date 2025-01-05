@@ -58,6 +58,7 @@
             left: 0;
             width: 160px;
             box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.478);
+            z-index: 1;
         }
 
         .sub-menu a{
@@ -73,6 +74,7 @@
         }
 
         .recommend, .cart {  /*推薦 購物車*/
+            position: relative;
             width: 45%;
             border-radius: 8px;  /*圓角*/
             padding: 20px;
@@ -152,8 +154,9 @@
         }
 
         .total{  /*合計*/
-            text-align: end;
-            margin-top: 130px;
+            position: absolute;
+            bottom: 3%;
+            right: 5%;
             font-weight: bold;
         }
 
@@ -256,166 +259,248 @@
 </head>
 <body>
 
-<header>
-    <a href="../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
-</header>
+    <header>
+        <a href="../index.html" style="text-decoration: none; color: #000;"><h1>浪漫販售所</h1></a>
+    </header>
 
-<div class="nav-bar">
-    <div class="nav-item">
-        <a href="">鮮花</a>
-        <div class="sub-menu">
-            <a href="../html/flower/rose.html">戀戀玫瑰</a>
-            <a href="../html/flower/carnation.html">柔情似水</a>
-            <a href="../html/flower/chrysanthemum.html">菊豔風華</a>
-            <a href="../html/flower/lily.html">天使的祝福</a>
-        </div>
-    </div>
-    <div class="nav-item">
-        <a href="">盆景</a>
-        <div class="sub-menu">
-            <a href="../html/bonsai/cactus.html">金玉滿堂</a>
-            <a href="../html/bonsai/bamboo.html">翠竹盈門</a>
-        </div>
-    </div>
-    <div class="nav-item">
-        <a href="">生活小物</a>
-        <div class="sub-menu">
-            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花海旋律</a>
-            <a href="../html/lifestyle-accessory/scented-candle.html">晨露輕語</a>
-            <a href="../html/lifestyle-accessory/teddy-bear.html">愛之守護</a>
-            <a href="../html/lifestyle-accessory/natural-handmade-soap.html">香氛夢境</a>
-            <a href="../html/lifestyle-accessory/dried-flower.html">永恆花語</a>
-            <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花韻瓶</a>
-        </div>
-    </div>
-    <div class="nav-item">
-        <a href="">花材包</a>
-        <div class="sub-menu">
-            <a href="../html/diy-flower-material-kit/christmas-themed-flower-kit.html">慶聖誕歡樂盒</a>
-            <a href="../html/diy-flower-material-kit/valentine's-day-themed-flower-kit.html">情意綿綿告白盒</a>
-        </div>
-    </div>
-    <div class="nav-item">
-        <a href="">課程體驗</a>
-        <div class="sub-menu">
-            <a href="../html/floral-arrangement-course/dried-flower-making.html">乾燥花</a>
-            <a href="../html/floral-arrangement-course/natural-scented-candle.html">香氛蠟燭</a>
-            <a href="../html/floral-arrangement-course/soap-flower-handmade-soap.html">手工香皂</a>
-            <a href="../html/floral-arrangement-course/flower-arrangement-art.html">插花藝術</a>
-        </div>
-    </div>
-</div>
-
-<div class="main">
-    <div class="recommend">     <!--推薦商品-->
-        <h2>推薦商品</h2>
-        <div class="scrollable-content">
-            <div class="product-item">
-                <img src="../image/flower/lily.png">
-                <span class="product-name">天使的祝福</span>
-                <span class="price">$2900</span>
-                <button>+</button>
+    <div class="nav-bar">
+        <div class="nav-item">
+            <a href="">鮮花</a>
+            <div class="sub-menu">
+                <a href="../html/flower/rose.html">戀戀玫瑰</a>
+                <a href="../html/flower/carnation.html">柔情似水</a>
+                <a href="../html/flower/chrysanthemum.html">菊豔風華</a>
+                <a href="../html/flower/lily.html">天使的祝福</a>
             </div>
-            <div class="product-item">
-                <img src="../image/lifestyle-accessory/dried-flower.png">
-                <span class="product-name">永恆花語</span>
-                <span class="price">$1890</span>
-                <button>+</button>
+        </div>
+        <div class="nav-item">
+            <a href="">盆景</a>
+            <div class="sub-menu">
+                <a href="../html/bonsai/cactus.html">金玉滿堂</a>
+                <a href="../html/bonsai/bamboo.html">翠竹盈門</a>
             </div>
-            <div class="product-item">
-                <img src="../image/lifestyle-accessory/natural-handmade-soap.png">
-                <span class="product-name">香氛夢境</span>
-                <span class="price">$690</span>
-                <button>+</button>
+        </div>
+        <div class="nav-item">
+            <a href="">生活小物</a>
+            <div class="sub-menu">
+                <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花海旋律</a>
+                <a href="../html/lifestyle-accessory/scented-candle.html">晨露輕語</a>
+                <a href="../html/lifestyle-accessory/teddy-bear.html">愛之守護</a>
+                <a href="../html/lifestyle-accessory/natural-handmade-soap.html">香氛夢境</a>
+                <a href="../html/lifestyle-accessory/dried-flower.html">永恆花語</a>
+                <a href="../html/lifestyle-accessory/flower-arragement-tools-for-vases.html">花韻瓶</a>
             </div>
-            <div class="product-item">
-                <img src="../image/diy-flower-material-kit/valentine's-day-themed-flower-kit.png">
-                <span class="product-name">情意綿綿告⽩盒</span>
-                <span class="price">$1800</span>
-                <button>+</button>
+        </div>
+        <div class="nav-item">
+            <a href="">花材包</a>
+            <div class="sub-menu">
+                <a href="../html/diy-flower-material-kit/christmas-themed-flower-kit.html">慶聖誕歡樂盒</a>
+                <a href="../html/diy-flower-material-kit/valentine's-day-themed-flower-kit.html">情意綿綿告白盒</a>
             </div>
-            <div class="product-item">
-                <img src="../image/lifestyle-accessory/scented-candle.png">
-                <span class="product-name">晨露輕語</span>
-                <span class="price">$590</span>
-                <button>+</button>
+        </div>
+        <div class="nav-item">
+            <a href="">課程體驗</a>
+            <div class="sub-menu">
+                <a href="../html/floral-arrangement-course/dried-flower-making.html">乾燥花</a>
+                <a href="../html/floral-arrangement-course/natural-scented-candle.html">香氛蠟燭</a>
+                <a href="../html/floral-arrangement-course/soap-flower-handmade-soap.html">手工香皂</a>
+                <a href="../html/floral-arrangement-course/flower-arrangement-art.html">插花藝術</a>
             </div>
         </div>
     </div>
 
-    <div class="cart">      <!--購物車-->
-        <h2>購物車</h2>
-        <div class="cart-item">
-            <img src="../image/flower/carnation.png">
-            <span class="product-name">柔情似⽔</span>
-            <span class="price">$1200</span>
-            <button>-</button>
+    <div class="main">
+        <div class="recommend">     <!--推薦商品-->
+            <h2>推薦商品</h2>
+            <div class="scrollable-content">
+                <div class="product-item">
+                    <img src="../image/flower/lily.png">
+                    <span class="product-name">天使的祝福</span>
+                    <span class="price">$2900</span>
+                    <button>+</button>
+                </div>
+                <div class="product-item">
+                    <img src="../image/lifestyle-accessory/dried-flower.png">
+                    <span class="product-name">永恆花語</span>
+                    <span class="price">$1890</span>
+                    <button>+</button>
+                </div>
+                <div class="product-item">
+                    <img src="../image/lifestyle-accessory/natural-handmade-soap.png">
+                    <span class="product-name">香氛夢境</span>
+                    <span class="price">$690</span>
+                    <button>+</button>
+                </div>
+                <div class="product-item">
+                    <img src="../image/diy-flower-material-kit/valentine's-day-themed-flower-kit.png">
+                    <span class="product-name">情意綿綿告⽩盒</span>
+                    <span class="price">$1800</span>
+                    <button>+</button>
+                </div>
+                <div class="product-item">
+                    <img src="../image/lifestyle-accessory/scented-candle.png">
+                    <span class="product-name">晨露輕語</span>
+                    <span class="price">$590</span>
+                    <button>+</button>
+                </div>
+            </div>
         </div>
 
-        <div class="cart-item">
-            <img src="../image/lifestyle-accessory/floral-scented-candle.png">
-            <span class="product-name">花海旋律</span>
-            <span class="price">$790</span>
-            <button>-</button>
-        </div>
+        <div class="cart">      <!--購物車-->
+            <h2>購物車</h2>
+            <div class="scrollable-content">
+                <div class="cart-item">
+                    <img src="../image/flower/carnation.png">
+                    <span class="product-name">柔情似水</span>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <span class="price">$1200</span>
+                </div>
+    
+                <div class="cart-item">
+                    <img src="../image/lifestyle-accessory/floral-scented-candle.png">
+                    <span class="product-name">花海旋律</span>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <span class="price">$790</span>
+                </div>
+            
+    
+                <div class="cart-item">
+                    <img src="../image/lifestyle-accessory/flower-arragement-tools-for-vases.png">
+                    <span class="product-name">花韻瓶</span>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <span class="price">$890</span>
+                </div>
+            </div>
 
-        <div class="cart-item">
-            <img src="../image/lifestyle-accessory/flower-arragement-tools-for-vases.png">
-            <span class="product-name">花韻瓶</span>
-            <span class="price">$890</span>
-            <button>-</button>
+            <div class="total">合計 $2880</div>
         </div>
-        <div class="total">合計 $2880</div>
     </div>
-</div>
 
-<div class="checkout">
-    <div class="checkout-out">
-        <div class="checkout-section">
-            <h3>付款方式</h3>
-            <label>
-            <input type="radio" name="pay" class="radio"/> 匯款
-            </label>
-            <label>
-                <input type="radio" name="pay" class="radio"/> 信用卡
-            </label>    
-            <label>
-            <input type="radio" name="pay" class="radio"/> 貨到付款
-            </label>
+    <div class="checkout">
+        <div class="checkout-out">
+            <div class="checkout-section">
+                <h3>付款方式</h3>
+                <label>
+                <input type="radio" name="pay" class="radio"/> 匯款
+                </label>
+                <label>
+                    <input type="radio" name="pay" class="radio"/> 信用卡
+                </label>    
+                <label>
+                <input type="radio" name="pay" class="radio"/> 貨到付款
+                </label>
+            </div>
+
+            <div class="checkout-section">
+                <h3>取貨方式</h3>
+                <label>
+                <input type="radio" name="pick" class="radio"/> 來店取貨
+                </label>
+                <label>
+                <input type="radio" name="pick" class="radio"/> 宅配到家
+                </label>
+                <label>
+                <input type="radio" name="pick" class="radio"/> 超商取貨
+                </label>
+            </div>        
         </div>
 
-        <div class="checkout-section">
-            <h3>取貨方式</h3>
-            <label>
-            <input type="radio" name="pick" class="radio"/> 來店取貨
-            </label>
-            <label>
-            <input type="radio" name="pick" class="radio"/> 宅配到家
-            </label>
-            <label>
-            <input type="radio" name="pick" class="radio"/> 超商取貨
-            </label>
-        </div>        
+        <button class="endbutton">送出</button>
+
     </div>
 
-    <button class="endbutton">送出</button>
+    <footer>
+        <h2>浪漫販售所</h2>
 
-</div>
+        <div class="footer-nav">
+            <a href="about-us.html">關於我們</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
+                聯絡我們
+            </a>
+            <a href="q-and-a.html">常見問題</a>
+            <a href="deliver.html">付款＆配送</a>
+            <a href="flower-maintainment.html">花卉養護</a>
+        </div>
 
-<footer>
-    <h2>浪漫販售所</h2>
+    </footer>
 
-    <div class="footer-nav">
-        <a href="about-us.html">關於我們</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shuankuo1112@gmail.com" target="_blank">
-            聯絡我們
-        </a>
-        <a href="q-and-a.html">常見問題</a>
-        <a href="deliver.html">付款＆配送</a>
-        <a href="flower-maintainment.html">花卉養護</a>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cartContainer = document.querySelector(".cart .scrollable-content");
 
-</footer>
+            document.querySelector(".recommend").addEventListener("click", (event) => {
+                if (event.target.tagName === "BUTTON") {
+                    const productItem = event.target.closest(".product-item");
+                    const name = productItem.querySelector(".product-name").textContent;
+                    const price = productItem.querySelector(".price").textContent;
+                    const imgSrc = productItem.querySelector("img").src;
+
+                    addToCart(name, price, imgSrc);
+                    updateTotalPrice();
+                }
+            });
+
+            cartContainer.addEventListener("click", (event) => {
+                if (event.target.classList.contains("increase")) {
+                    const quantityElem = event.target.previousElementSibling;
+                    quantityElem.textContent = parseInt(quantityElem.textContent) + 1;
+                } else if (event.target.classList.contains("decrease")) {
+                    const quantityElem = event.target.nextElementSibling;
+                    const quantity = parseInt(quantityElem.textContent);
+                    if (quantity > 1) {
+                        quantityElem.textContent = quantity - 1;
+                    }
+                }
+                updateTotalPrice();
+            });
+
+            function addToCart(name, price, imgSrc) {
+                const existingItem = Array.from(cartContainer.querySelectorAll(".cart-item")).find(
+                    (item) => item.querySelector(".product-name").textContent === name
+                );
+
+                const items = cartContainer.querySelectorAll(".cart-item");
+                if (existingItem) {
+                    const quantityElem = existingItem.querySelector(".quantity");
+                    quantityElem.textContent = parseInt(quantityElem.textContent) + 1;
+                } else {
+                    const cartItem = document.createElement("div");
+                    cartItem.className = "cart-item";
+                    cartItem.innerHTML = `
+                        <img src="${imgSrc}" alt="${name}">
+                        <span class="product-name">${name}</span>
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                        <span class="price">${price}</span>
+                    `;
+                    cartContainer.insertBefore(cartItem, items[items.length - 1]);
+                }
+            }
+
+            function updateTotalPrice() {
+                let total = 0;
+                document.querySelectorAll(".cart-item").forEach((item) => {
+                    const quantity = parseInt(item.querySelector(".quantity").textContent);
+                    const price = parseInt(item.querySelector(".price").textContent.replace('$', ''));
+                    total += quantity * price;
+                });
+                document.querySelector(".total").textContent = `合計 $${total}`;
+            }
+        });
+    </script>
 
 </body>
 </html>
